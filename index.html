@@ -1164,9 +1164,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'en';
             const savedCurr = localStorage.getItem('currency') || 'chf';
-            if (savedLang !== 'en') setLanguage(savedLang);
-            if (savedCurr !== 'chf') setCurrency(savedCurr);
-            else updateContent();
+            currentLanguage = savedLang;
+            currentCurrency = savedCurr;
+            document.getElementById('lang-en').classList.toggle('active', savedLang === 'en');
+            document.getElementById('lang-fr').classList.toggle('active', savedLang === 'fr');
+            document.getElementById('curr-chf').classList.toggle('active', savedCurr === 'chf');
+            document.getElementById('curr-eur').classList.toggle('active', savedCurr === 'eur');
+            updateContent();
+            renderPricing();
         });
     </script>
 </body>

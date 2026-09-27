@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rebecca Mars - Independent French–English Interpreter for Geneva. Professional interpretation for NGOs, law firms, conferences and international events.">
-    <title>Rebecca Mars - French–English Interpreter, Geneva</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Rebecca Mars - French–English Interpreter & Translator. Professional interpretation for NGOs, law firms, conferences and international events.">
+    <title>Rebecca Mars - Interpreter & Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --navy: #1a2d5e;
-            --gold: #a68860;
-            --white: #ffffff;
-            --off-white: #f8f9fa;
-            --dark-gray: #1f2937;
-            --text-gray: #6b7280;
-            --light-gray: #9ca3af;
-            --border: #e5e7eb;
-            --success: #10b981;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
+        :root {
+            --navy: #1a3a52;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --light: #f5f3f0;
+            --text: #2c3e50;
+            --border: #e0ddd8;
+        }
+
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--white);
-            color: var(--dark-gray);
+            color: var(--text);
             line-height: 1.6;
         }
 
@@ -33,16 +31,14 @@
         header {
             position: sticky;
             top: 0;
-            z-index: 200;
-            background: rgba(26, 45, 94, 0.98);
-            backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 2rem;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            background: var(--navy);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         nav {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -50,78 +46,12 @@
             gap: 2rem;
         }
 
-        .logo-section { flex: 1; }
-
         .logo {
-            font-size: 2.4rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 600;
             color: var(--white);
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        .tagline {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.85);
-            letter-spacing: 0.05em;
-            font-weight: 500;
-            margin-top: 0.3rem;
-        }
-
-        .nav-center { flex: 0; }
-
-        .nav-menu {
-            position: relative;
-            display: inline-block;
-        }
-
-        .menu-btn {
-            padding: 0.5rem 0.75rem;
-            background: rgba(212, 165, 116, 0.1);
-            color: var(--white);
-            border: 1px solid rgba(212, 165, 116, 0.25);
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: all 150ms ease-out;
-        }
-
-        .menu-btn:hover {
-            background: rgba(212, 165, 116, 0.2);
-            border-color: var(--gold);
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-            min-width: 200px;
-            margin-top: 0.5rem;
-            z-index: 1000;
-        }
-
-        .dropdown.show { display: block; }
-        .dropdown a {
-            display: block;
-            padding: 0.8rem 1.25rem;
-            color: var(--dark-gray);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 150ms ease-out;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .dropdown a:last-child { border-bottom: none; }
-        .dropdown a:hover {
-            background: var(--off-white);
-            color: var(--navy);
-            padding-left: 1.5rem;
+            font-family: 'Lora', serif;
+            letter-spacing: -0.5px;
         }
 
         .nav-right {
@@ -130,64 +60,67 @@
             gap: 1.5rem;
         }
 
-        .whatsapp-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
         .ws-btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.7rem 1.3rem;
-            background: #1a7a35;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: #25D366;
             color: white;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 200ms ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            text-decoration: none;
+            transition: all 150ms ease;
+            cursor: pointer;
         }
 
         .ws-btn:hover {
-            background: #146b2e;
+            background: #20ba5a;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .ws-btn i { font-size: 1.1rem; }
+        .ws-btn i { font-size: 0.95rem; }
+
+        .toggles {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .toggle-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
 
         .toggle-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.7);
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .toggle-group {
             display: flex;
-            gap: 0.4rem;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 0.35rem;
-            border-radius: 6px;
+            gap: 0.3rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem;
+            border-radius: 5px;
         }
 
         .toggle-btn {
-            padding: 0.35rem 0.7rem;
+            padding: 0.35rem 0.6rem;
             background: transparent;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255,255,255,0.7);
             border: none;
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 150ms ease-out;
-            min-width: 36px;
-            text-align: center;
+            transition: all 150ms ease;
         }
 
         .toggle-btn.active {
@@ -195,75 +128,53 @@
             color: var(--navy);
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 768px) {
             nav { gap: 1rem; }
-            .whatsapp-buttons { gap: 0.5rem; }
-            .ws-btn { padding: 0.6rem 1rem; font-size: 0.8rem; }
-        }
-
-        @media (max-width: 900px) {
-            .nav-center { display: none; }
-            nav { flex-wrap: wrap; }
+            .toggles { gap: 0.8rem; }
+            .ws-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
         }
 
         /* HERO */
         .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5rem;
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(26, 45, 94, 0.02) 0%, rgba(212, 165, 116, 0.015) 100%);
-            max-width: 1280px;
+            background: linear-gradient(135deg, var(--navy) 0%, #245375 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .hero-content { max-width: 600px; flex: 1; }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--navy);
-            margin-bottom: 1.2rem;
-            letter-spacing: -0.015em;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            border-radius: 8px;
+        .hero-text h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
             font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 200ms ease-out;
-            text-decoration: none;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            opacity: 0.95;
         }
 
         .hero-image {
             width: 100%;
+            max-width: 300px;
             aspect-ratio: 3/4;
-            border-radius: 16px;
+            border: 3px solid var(--gold);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
-            background: var(--off-white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            margin: 0 auto;
         }
 
         .hero-image img {
@@ -272,111 +183,72 @@
             object-fit: cover;
         }
 
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: var(--gold);
+            color: var(--navy);
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
         @media (max-width: 1024px) {
-            .hero {
-                flex-direction: column;
-                min-height: auto;
-                gap: 2rem;
-                padding: 4rem 2rem;
-            }
-            .hero-content { max-width: 100%; }
+            .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-text h1 { font-size: 2.2rem; }
         }
 
         /* SECTIONS */
         section {
-            padding: 4rem 2rem;
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
         section h2 {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            font-weight: 700;
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
             color: var(--navy);
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
             text-align: center;
-            letter-spacing: -0.01em;
-        }
-
-        /* PRICING FEATURED */
-        .pricing-featured {
-            background: linear-gradient(135deg, rgba(26, 45, 94, 0.03) 0%, rgba(212, 165, 116, 0.02) 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 3rem;
-            margin: 3rem auto;
-            max-width: 900px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .price-card {
-            padding: 2rem;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            transition: all 300ms ease-out;
-        }
-
-        .price-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
-        }
-
-        .price-card h3 {
-            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.8rem;
-        }
-
-        .price-card p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .price-amount {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: -0.5px;
         }
 
         /* SERVICES */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
-            padding: 2.5rem;
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: all 300ms ease-out;
-            position: relative;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 200ms ease;
+            background: var(--white);
         }
 
         .service-card:hover {
             border-color: var(--gold);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 20px rgba(212,175,55,0.15);
             transform: translateY(-4px);
         }
 
         .service-image {
             width: 100%;
             height: 200px;
-            border-radius: 10px;
+            background: var(--light);
             overflow: hidden;
-            margin-bottom: 1.5rem;
-            background: var(--off-white);
         }
 
         .service-image img {
@@ -385,96 +257,117 @@
             object-fit: cover;
         }
 
+        .service-content {
+            padding: 1.8rem;
+            border-top: 3px solid var(--gold);
+        }
+
         .service-card h3 {
+            font-family: 'Lora', serif;
             font-size: 1.2rem;
-            font-weight: 600;
             color: var(--navy);
             margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         .service-card p {
-            color: var(--text-gray);
-            margin-bottom: 1.3rem;
-            line-height: 1.6;
+            color: #666;
             font-size: 0.95rem;
-        }
-
-        /* WHY CHOOSE */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .why-card {
-            padding: 2rem;
-            background: var(--off-white);
-            border-radius: 8px;
-            transition: all 300ms ease-out;
-        }
-
-        .why-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .why-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.8rem;
-        }
-
-        .why-card p {
-            color: var(--text-gray);
             line-height: 1.6;
-            font-size: 0.95rem;
         }
 
         /* ABOUT */
-        .about-container { max-width: 750px; margin: 0 auto; }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        .about-container p {
-            margin-bottom: 2rem;
+        .about-content p {
+            margin-bottom: 1.5rem;
             font-size: 1rem;
             line-height: 1.8;
-            color: var(--text-gray);
+            color: #555;
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .price-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 200ms ease;
+            background: var(--light);
+        }
+
+        .price-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.1);
+        }
+
+        .price-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .price-card .desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            font-family: 'Lora', serif;
         }
 
         /* CONTACT */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            max-width: 1100px;
+            gap: 3rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .contact-info h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
             color: var(--navy);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .contact-detail {
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
         }
 
         .contact-label {
-            display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            color: #999;
             font-weight: 600;
-            color: var(--light-gray);
-            letter-spacing: 0.3px;
-            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+            display: block;
         }
 
         .contact-detail a {
             font-size: 1rem;
             color: var(--navy);
             text-decoration: none;
-            transition: all 150ms ease-out;
+            font-weight: 500;
+            transition: color 150ms ease;
         }
 
         .contact-detail a:hover {
@@ -493,34 +386,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
-            background: var(--off-white);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
+            border-radius: 8px;
             color: var(--navy);
             font-size: 1.2rem;
             text-decoration: none;
-            transition: all 200ms ease-out;
+            transition: all 150ms ease;
         }
 
         .social-icon:hover {
-            transform: translateY(-3px);
             border-color: var(--gold);
             background: var(--gold);
-            color: var(--navy);
-            box-shadow: 0 6px 16px rgba(212, 165, 116, 0.2);
+            color: var(--white);
         }
 
-        /* CONTACT FORM */
+        /* FORM */
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .form-group label {
@@ -532,12 +422,12 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-            padding: 0.85rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: 'Inter', system-ui;
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
             font-size: 0.95rem;
-            transition: all 150ms ease-out;
+            transition: border-color 150ms ease;
         }
 
         .form-group input:focus,
@@ -545,7 +435,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
         }
 
         .form-submit {
@@ -553,63 +443,18 @@
             background: var(--gold);
             color: var(--navy);
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 200ms ease-out;
-            margin-top: 1rem;
+            transition: all 200ms ease;
+            margin-top: 0.8rem;
         }
 
         .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+            background: var(--navy);
+            color: var(--gold);
         }
-
-        /* FAQ */
-        .faq-wrapper { max-width: 800px; margin: 0 auto; }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-            background: var(--white);
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            background: var(--off-white);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--navy);
-            user-select: none;
-            transition: all 200ms ease-out;
-        }
-
-        .faq-question:hover {
-            background: rgba(212, 165, 116, 0.08);
-        }
-
-        .faq-icon {
-            font-size: 1.2rem;
-            transition: transform 300ms ease-out;
-        }
-
-        .faq-item.open .faq-icon { transform: rotate(180deg); }
-
-        .faq-answer {
-            display: none;
-            padding: 1.5rem;
-            color: var(--text-gray);
-            line-height: 1.7;
-            border-top: 1px solid var(--border);
-        }
-
-        .faq-item.open .faq-answer { display: block; }
 
         /* FOOTER */
         footer {
@@ -617,164 +462,91 @@
             color: var(--white);
             text-align: center;
             padding: 3rem 2rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
+            border-top: 3px solid var(--gold);
         }
 
-        footer p { margin: 0.5rem 0; font-size: 0.9rem; opacity: 0.9; }
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
 
         footer a {
             color: var(--gold);
             text-decoration: none;
-            transition: all 150ms ease-out;
+            transition: opacity 150ms ease;
         }
 
-        footer a:hover { opacity: 0.8; text-decoration: underline; }
-
-        /* COOKIE BANNER */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 45, 94, 0.98);
-            backdrop-filter: blur(20px);
-            color: var(--white);
-            padding: 1.5rem 2rem;
-            display: none;
-            gap: 2rem;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .cookie-banner.show { display: flex; }
-        .cookie-banner p { flex: 1; margin: 0; font-size: 0.9rem; line-height: 1.6; }
-
-        .cookie-accept {
-            padding: 0.7rem 1.5rem;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            white-space: nowrap;
-            font-size: 0.9rem;
-            transition: all 150ms ease-out;
-        }
-
-        .cookie-accept:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.3);
+        footer a:hover {
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
-            section { padding: 5rem 2rem; }
-            .contact-container { grid-template-columns: 1fr; gap: 3rem; }
-            .cookie-banner { flex-direction: column; text-align: center; padding: 1.25rem 1.5rem; }
-            .pricing-featured { padding: 2rem; }
-            .nav-right { flex-direction: column; gap: 1rem; }
-            .whatsapp-buttons { flex-direction: column; width: 100%; }
-            .ws-btn { width: 100%; justify-content: center; }
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+            section { padding: 2rem 1.5rem; }
+            section h2 { font-size: 1.8rem; }
+            .contact-container { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <h1 class="sr-only">Rebecca Mars - French English Interpreter Geneva</h1>
-
     <header>
         <nav>
-            <div class="logo-section">
-                <div class="logo">Rebecca Mars</div>
-                <div class="tagline">Interpreter & Translator</div>
-            </div>
-            <div class="nav-center">
-                <div class="nav-menu">
-                    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-                    <div class="dropdown" id="dropdown">
-                        <a href="#services" onclick="closeMenu()">Services</a>
-                        <a href="#pricing" onclick="closeMenu()">Pricing</a>
-                        <a href="#why-choose" onclick="closeMenu()">Why Choose</a>
-                        <a href="#about" onclick="closeMenu()">About</a>
-                        <a href="#faq" onclick="closeMenu()">FAQ</a>
-                        <a href="#contact" onclick="closeMenu()">Contact</a>
-                    </div>
-                </div>
-            </div>
+            <div class="logo">Rebecca Mars</div>
             <div class="nav-right">
-                <div class="whatsapp-buttons">
-                    <a href="https://wa.me/41796805248?text=Hello%20Rebecca%2C%20I%27d%20like%20to%20discuss%20an%20interpretation%20project" class="ws-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Switzerland
-                    </a>
-                    <a href="https://wa.me/33788157064?text=Bonjour%20Rebecca%2C%20j%27aimerais%20discuter%20d%27un%20projet%20d%27interprétation" class="ws-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> France
-                    </a>
-                </div>
-                <div>
-                    <span class="toggle-label">Language</span>
-                    <div class="toggle-group">
-                        <button class="toggle-btn active" id="lang-en" onclick="setLanguage('en')" title="English">EN</button>
-                        <button class="toggle-btn" id="lang-fr" onclick="setLanguage('fr')" title="Français">FR</button>
+                <a href="https://wa.me/41796805248?text=Hello%20Rebecca" class="ws-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> +41 79 680 52 48
+                </a>
+                <div class="toggles">
+                    <div class="toggle-section">
+                        <span class="toggle-label">Language</span>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" id="lang-en" onclick="setLanguage('en')">🇬🇧 EN</button>
+                            <button class="toggle-btn" id="lang-fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <span class="toggle-label">Currency</span>
-                    <div class="toggle-group">
-                        <button class="toggle-btn active" id="curr-chf" onclick="setCurrency('chf')" title="Swiss Francs">CHF</button>
-                        <button class="toggle-btn" id="curr-eur" onclick="setCurrency('eur')" title="Euros">EUR</button>
+                    <div class="toggle-section">
+                        <span class="toggle-label">Currency</span>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" id="curr-chf" onclick="setCurrency('chf')">🇨🇭 CHF</button>
+                            <button class="toggle-btn" id="curr-eur" onclick="setCurrency('eur')">🇪🇺 EUR</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 id="hero-title">French–English Interpretation for Geneva</h1>
-            <p id="hero-subtitle">Professional interpretation for international meetings, conferences and events. Direct access. Flexibility. Professionalism.</p>
-            <button class="hero-cta" onclick="scrollTo('contact')" id="cta-contact">Request a Quote</button>
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1 id="hero-title">French–English Interpretation & Translation</h1>
+                <p id="hero-subtitle">Professional interpretation for international meetings, conferences and events. Direct access. Flexibility. Expertise.</p>
+                <a href="#contact" class="cta-btn" id="cta-text">Request a Quote</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/14.png" alt="Rebecca Mars">
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="images/14.png" alt="Rebecca Mars professional headshot">
-        </div>
-    </section>
-
-    <section id="pricing">
-        <h2 id="pricing-title">Pricing</h2>
-        <div class="pricing-featured">
-            <div class="pricing-grid" id="pricing-cards"></div>
-            <p style="text-align: center; color: var(--text-gray); margin-top: 2rem; font-size: 0.9rem;" id="pricing-note">Every assignment is quoted individually based on duration, subject matter, preparation requirements and technical requirements.</p>
-        </div>
-    </section>
+    </div>
 
     <section id="services">
         <h2 id="services-title">Services</h2>
         <div class="services-grid" id="services-grid"></div>
     </section>
 
-    <section id="why-choose">
-        <h2 id="why-title">Why Choose Rebecca</h2>
-        <div class="why-grid" id="why-grid"></div>
+    <section id="pricing">
+        <h2 id="pricing-title">Pricing</h2>
+        <div class="pricing-grid" id="pricing-grid"></div>
     </section>
 
     <section id="about">
-        <h2 id="about-title">About</h2>
-        <div class="about-container">
-            <p id="about-p1">I am an independent French–English interpreter based in Geneva. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.</p>
-            <p id="about-p2">Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and follow-up.</p>
-            <p id="about-p3">My goal: give you direct access to a professional, prepared and accountable interpreter.</p>
+        <h2 id="about-title">About Rebecca</h2>
+        <div class="about-content">
+            <p id="about-p1">I am an independent French–English interpreter and translator based in the Geneva region. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.</p>
+            <p id="about-p2">Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and professional follow-up.</p>
+            <p id="about-p3">My commitment: direct access to a prepared, accountable professional interpreter.</p>
         </div>
     </section>
 
@@ -782,7 +554,7 @@
         <h2 id="contact-title">Contact & Quote Request</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3 id="contact-info-title">Get in Touch</h3>
+                <h3 id="contact-heading">Get in Touch</h3>
                 <div class="contact-detail">
                     <span class="contact-label">Email</span>
                     <a href="mailto:hello@rebecca-mars.fr">hello@rebecca-mars.fr</a>
@@ -795,69 +567,55 @@
                     <span class="contact-label" id="phone-fr-label">Phone (France)</span>
                     <a href="tel:+33788157064">+33 7 88 15 70 64</a>
                 </div>
-                <h3 id="social-title" style="margin-top: 2.5rem; font-size: 1rem;">Follow</h3>
+                <h3 style="margin-top: 2rem; font-size: 1.1rem;" id="follow-heading">Follow</h3>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/rebecca-mars" class="social-icon" title="LinkedIn" target="_blank">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/rebecca-mars" class="social-icon" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://instagram.com/rebecca-mars" class="social-icon" title="Instagram" target="_blank">
+                    <a href="https://instagram.com/rebecca-mars" class="social-icon" target="_blank" title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com/rebecca-mars" class="social-icon" title="Facebook" target="_blank">
-                        <i class="fab fa-facebook"></i>
+                    <a href="https://facebook.com/rebecca-mars" class="social-icon" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
             </div>
-            <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label for="name" id="form-name-label">Name</label>
+                    <label for="name" id="name-label">Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email" id="form-email-label">Email</label>
+                    <label for="email" id="email-label">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="organization" id="form-org-label">Organization</label>
-                    <input type="text" id="organization" name="organization">
+                    <label for="org" id="org-label">Organization</label>
+                    <input type="text" id="org" name="org">
                 </div>
                 <div class="form-group">
-                    <label for="service" id="form-service-label">Service Type</label>
+                    <label for="service" id="service-label">Service</label>
                     <select id="service" name="service" required>
                         <option value="">Select a service</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message" id="form-message-label">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message" id="message-label">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="consent" name="consent" style="width: auto;" required>
-                    <label for="consent" id="form-consent-label" style="display: inline; margin-left: 0.5rem;">I consent to Rebecca Mars contacting me about this request</label>
-                </div>
-                <button type="submit" class="form-submit" id="form-submit">Send Quote Request</button>
+                <button type="submit" class="form-submit" id="submit-label">Send Request</button>
             </form>
         </div>
-    </section>
-
-    <section id="faq">
-        <h2 id="faq-title">Frequently Asked Questions</h2>
-        <div class="faq-wrapper" id="faq-list"></div>
     </section>
 
     <footer>
         <p id="footer-text">&copy; 2026 Rebecca Mars. All rights reserved.</p>
         <p>
-            <a href="#privacy" id="footer-privacy">Privacy Policy</a> ·
-            <a href="#terms" id="footer-terms">Terms & Conditions</a> ·
-            <a href="#cookies" id="footer-cookies">Cookie Policy</a>
+            <a href="#privacy">Privacy</a> ·
+            <a href="#terms">Terms</a> ·
+            <a href="#cookies">Cookies</a>
         </p>
     </footer>
-
-    <div class="cookie-banner" id="cookie-banner">
-        <p id="cookie-text">This site uses cookies for analytics and essential functionality. By continuing, you accept our cookie policy.</p>
-        <button class="cookie-accept" id="cookie-accept" onclick="acceptCookies()">Accept</button>
-    </div>
 
     <script>
         let currentLanguage = 'en';
@@ -865,144 +623,90 @@
 
         const content = {
             en: {
-                heroTitle: 'French–English Interpretation for Geneva',
-                heroSubtitle: 'Professional interpretation for international meetings, conferences and events. Direct access. Flexibility. Professionalism.',
+                heroTitle: 'French–English Interpretation & Translation',
+                heroSubtitle: 'Professional interpretation for international meetings, conferences and events. Direct access. Flexibility. Expertise.',
+                ctaText: 'Request a Quote',
                 servicesTitle: 'Services',
                 pricingTitle: 'Pricing',
-                pricingNote: 'Every assignment is quoted individually based on duration, subject matter, preparation requirements and technical requirements.',
-                whyTitle: 'Why Choose Rebecca',
-                aboutTitle: 'About',
-                aboutP1: 'I am an independent French–English interpreter based in Geneva. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.',
-                aboutP2: 'Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and follow-up.',
-                aboutP3: 'My goal: give you direct access to a professional, prepared and accountable interpreter.',
+                aboutTitle: 'About Rebecca',
+                aboutP1: 'I am an independent French–English interpreter and translator based in the Geneva region. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.',
+                aboutP2: 'Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and professional follow-up.',
+                aboutP3: 'My commitment: direct access to a prepared, accountable professional interpreter.',
                 contactTitle: 'Contact & Quote Request',
-                contactInfoTitle: 'Get in Touch',
-                socialTitle: 'Follow',
-                formNameLabel: 'Name',
-                formEmailLabel: 'Email',
-                formOrgLabel: 'Organization',
-                formServiceLabel: 'Service Type',
-                formMessageLabel: 'Message',
-                formConsentLabel: 'I consent to Rebecca Mars contacting me about this request',
-                formSubmit: 'Send Quote Request',
-                faqTitle: 'Frequently Asked Questions',
-                footerText: '© 2026 Rebecca Mars. All rights reserved.',
-                footerPrivacy: 'Privacy Policy',
-                footerTerms: 'Terms & Conditions',
-                footerCookies: 'Cookie Policy',
-                cookieText: 'This site uses cookies for analytics and essential functionality. By continuing, you accept our cookie policy.',
-                phoneFrLabel: 'Phone (France)',
-                phoneChLabel: 'Phone (Switzerland)',
-                ctaContact: 'Request a Quote',
+                contactHeading: 'Get in Touch',
+                followHeading: 'Follow',
+                phoneCh: 'Phone (Switzerland)',
+                phoneFr: 'Phone (France)',
+                nameLabel: 'Name',
+                emailLabel: 'Email',
+                orgLabel: 'Organization',
+                serviceLabel: 'Service',
+                messageLabel: 'Message',
+                submitLabel: 'Send Request',
+                footerText: '© 2026 Rebecca Mars. All rights reserved.'
             },
             fr: {
-                heroTitle: 'Interprétation Français–Anglais pour Genève',
-                heroSubtitle: 'Interprète indépendante pour les réunions professionnelles, conférences et événements internationaux. Accès direct. Flexibilité. Professionnalisme.',
+                heroTitle: 'Interprétation & Traduction Français–Anglais',
+                heroSubtitle: 'Interprète professionnelle pour réunions internationales, conférences et événements. Accès direct. Flexibilité. Expertise.',
+                ctaText: 'Demander un Devis',
                 servicesTitle: 'Services',
                 pricingTitle: 'Tarifs',
-                pricingNote: 'Chaque mission est devisée selon la durée, le sujet, les besoins de préparation et les exigences techniques.',
-                whyTitle: 'Pourquoi choisir Rebecca',
-                aboutTitle: 'À propos',
-                aboutP1: 'Je suis interprète indépendante français–anglais basée à Genève. Formée par Cambridge, examinatrice agréée, je combine 20 ans d\'expérience en enseignement linguistique avec une expertise en interprétation professionnelle pour les organisations internationales, ONG, cabinets juridiques et événements.',
-                aboutP2: 'Bilingue de naissance (mère anglaise, père français, élevée en France) avec une maîtrise complète des nuances culturelles et linguistiques des deux langues. Chaque mission est préparée avec soin : recherche terminologique, familiarisation avec les documents et le contexte, suivi.',
-                aboutP3: 'Mon objectif : vous donner accès direct à une professionnelle responsable, préparée et accessible.',
-                contactTitle: 'Contact et demande de devis',
-                contactInfoTitle: 'Nous contacter',
-                socialTitle: 'Suivez-moi',
-                formNameLabel: 'Nom',
-                formEmailLabel: 'Email',
-                formOrgLabel: 'Organisation',
-                formServiceLabel: 'Type de service',
-                formMessageLabel: 'Message',
-                formConsentLabel: 'J\'accepte d\'être contacté(e) par Rebecca Mars concernant cette demande',
-                formSubmit: 'Demander un devis',
-                faqTitle: 'Questions Fréquemment Posées',
-                footerText: '© 2026 Rebecca Mars. Tous droits réservés.',
-                footerPrivacy: 'Politique de confidentialité',
-                footerTerms: 'Conditions générales',
-                footerCookies: 'Politique relative aux cookies',
-                cookieText: 'Ce site utilise des cookies pour l\'analyse et les fonctionnalités essentielles. En poursuivant, vous acceptez notre politique relative aux cookies.',
-                phoneFrLabel: 'Téléphone (France)',
-                phoneChLabel: 'Téléphone (Suisse)',
-                ctaContact: 'Demander un devis',
+                aboutTitle: 'À Propos de Rebecca',
+                aboutP1: 'Je suis interprète et traductrice indépendante français–anglais basée dans la région genevoise. Formée par Cambridge, examinatrice agréée, je combine 20 ans d\'expérience en enseignement linguistique avec une expertise en interprétation professionnelle pour les organisations internationales, ONG, cabinets juridiques et événements.',
+                aboutP2: 'Bilingue de naissance (mère anglaise, père français, élevée en France) avec une maîtrise complète des nuances culturelles et linguistiques. Chaque mission est préparée avec soin : recherche terminologique, familiarisation avec les documents, étude du contexte et suivi professionnel.',
+                aboutP3: 'Mon engagement : accès direct à une interprète préparée et responsable.',
+                contactTitle: 'Contact et Demande de Devis',
+                contactHeading: 'Nous Contacter',
+                followHeading: 'Nous Suivre',
+                phoneCh: 'Téléphone (Suisse)',
+                phoneFr: 'Téléphone (France)',
+                nameLabel: 'Nom',
+                emailLabel: 'Email',
+                orgLabel: 'Organisation',
+                serviceLabel: 'Service',
+                messageLabel: 'Message',
+                submitLabel: 'Envoyer la Demande',
+                footerText: '© 2026 Rebecca Mars. Tous droits réservés.'
             }
         };
 
         const services = {
             en: [
-                { title: 'Consecutive Interpretation', desc: 'For professional meetings and events. Comprehensive note-taking and faithful interpretations.' },
-                { title: 'Simultaneous Interpretation', desc: 'For conferences and major events. Team interpretation as required.' },
-                { title: 'Chuchotage', desc: 'Whispered interpretation for delegations and small group meetings.' },
-                { title: 'Remote Interpretation', desc: 'Zoom, Teams and hybrid meetings. Simple setup and professional quality.' },
+                { title: 'Consecutive Interpretation', desc: 'Professional meetings and events with comprehensive note-taking.' },
+                { title: 'Simultaneous Interpretation', desc: 'Conferences and major events with team interpretation.' },
+                { title: 'Chuchotage', desc: 'Whispered interpretation for delegations and small meetings.' },
+                { title: 'Remote Interpretation', desc: 'Zoom, Teams and hybrid meetings with professional setup.' },
                 { title: 'Translation', desc: 'Professional documents, reports and communications.' },
-                { title: 'Language Support', desc: 'Terminology preparation, speaker coaching and meeting support.' }
+                { title: 'Language Support', desc: 'Terminology prep, speaker coaching and meeting support.' }
             ],
             fr: [
-                { title: 'Interprétation consécutive', desc: 'Réunions professionnelles et événements. Prise de note complète.' },
-                { title: 'Interprétation simultanée', desc: 'Conférences et événements importants. Travail en équipe selon les besoins.' },
+                { title: 'Interprétation Consécutive', desc: 'Réunions professionnelles et événements avec prise de note complète.' },
+                { title: 'Interprétation Simultanée', desc: 'Conférences et événements importants avec interprétation en équipe.' },
                 { title: 'Chuchotage', desc: 'Interprétation murmurée pour délégations et petites réunions.' },
-                { title: 'Interprétation à distance', desc: 'Zoom, Teams et réunions hybrides. Configuration simple et qualité professionnelle.' },
+                { title: 'Interprétation à Distance', desc: 'Zoom, Teams et réunions hybrides avec configuration professionnelle.' },
                 { title: 'Traduction', desc: 'Documents professionnels, rapports et communications.' },
-                { title: 'Accompagnement linguistique', desc: 'Préparation terminologique, coaching d\'orateurs, accompagnement de réunions.' }
+                { title: 'Accompagnement Linguistique', desc: 'Préparation terminologique, coaching d\'orateurs et accompagnement.' }
             ]
         };
 
         const pricing = {
             en: [
-                { title: 'Consecutive', price: 'CHF 125', priceeur: 'EUR 110', desc: 'per hour' },
-                { title: 'Remote Interpretation', price: 'CHF 100', priceeur: 'EUR 90', desc: 'per hour' },
-                { title: 'Translation', price: 'CHF 65', priceeur: 'EUR 60', desc: 'per hour' },
-                { title: 'Language Support', price: 'CHF 110', priceeur: 'EUR 100', desc: 'per hour' }
+                { title: 'Consecutive', price: 'CHF 125', priceEur: 'EUR 110' },
+                { title: 'Simultaneous', price: 'Quote', priceEur: 'Quote' },
+                { title: 'Chuchotage', price: 'Quote', priceEur: 'Quote' },
+                { title: 'Remote', price: 'CHF 100', priceEur: 'EUR 90' },
+                { title: 'Translation', price: 'CHF 65', priceEur: 'EUR 60' },
+                { title: 'Language Support', price: 'CHF 110', priceEur: 'EUR 100' }
             ],
             fr: [
-                { title: 'Interprétation consécutive', price: 'CHF 125', priceeur: 'EUR 110', desc: 'par heure' },
-                { title: 'Interprétation à distance', price: 'CHF 100', priceeur: 'EUR 90', desc: 'par heure' },
-                { title: 'Traduction', price: 'CHF 65', priceeur: 'EUR 60', desc: 'par heure' },
-                { title: 'Accompagnement linguistique', price: 'CHF 110', priceeur: 'EUR 100', desc: 'par heure' }
+                { title: 'Consécutive', price: 'CHF 125', priceEur: 'EUR 110' },
+                { title: 'Simultanée', price: 'Devis', priceEur: 'Devis' },
+                { title: 'Chuchotage', price: 'Devis', priceEur: 'Devis' },
+                { title: 'Distante', price: 'CHF 100', priceEur: 'EUR 90' },
+                { title: 'Traduction', price: 'CHF 65', priceEur: 'EUR 60' },
+                { title: 'Accompagnement', price: 'CHF 110', priceEur: 'EUR 100' }
             ]
         };
-
-        const whyChoose = {
-            en: [
-                { title: 'Direct Access', desc: 'No intermediary. Work directly with me from consultation through delivery.' },
-                { title: 'Thorough Preparation', desc: 'Documents, terminology research, context familiarization for every assignment.' },
-                { title: 'Professional Expertise', desc: 'Cambridge-certified, examiner, language teacher with 20+ years experience.' },
-                { title: 'Flexible & Responsive', desc: 'Independent, I adapt to your needs. Always available, transparent pricing.' }
-            ],
-            fr: [
-                { title: 'Accès direct', desc: 'Pas d\'intermédiaire. Travaillez directement avec moi de la consultation à la livraison.' },
-                { title: 'Préparation approfondie', desc: 'Documents, recherche terminologique, familiarisation avec le contexte pour chaque mission.' },
-                { title: 'Expertise professionnelle', desc: 'Formée par Cambridge, examinatrice, professeure avec 20+ ans d\'expérience.' },
-                { title: 'Flexible et réactive', desc: 'Indépendante, j\'adapte les services à vos besoins. Disponible, tarification transparente.' }
-            ]
-        };
-
-        const faqs = {
-            en: [
-                { q: 'What is your availability?', a: 'I work flexibly based on client needs. Most projects can be scheduled within 2 weeks notice. For shorter timelines, I adapt as much as possible.' },
-                { q: 'Do you require a deposit?', a: 'Yes, 25% deposit to hold your booking date. Final balance due upon completion.' },
-                { q: 'What is your cancellation policy?', a: 'More than 7 days notice: full refund. 7 days or less: 50% charge. Less than 24 hours: full charge or rescheduling available.' },
-                { q: 'Can you work remotely?', a: 'Absolutely. I offer remote interpretation via Zoom, Teams and other platforms with professional equipment setup.' },
-                { q: 'Do you work with team interpreters?', a: 'Yes. For large simultaneous interpretation projects, I work with trusted colleagues for seamless team interpretation.' },
-                { q: 'How do you prepare?', a: 'I request documents, background materials and terminology lists in advance. I research context and prepare glossaries for optimal quality.' }
-            ],
-            fr: [
-                { q: 'Quelle est votre disponibilité ?', a: 'Je travaille avec flexibilité selon les besoins du client. La plupart des projets peuvent être programmés dans un délai de 2 semaines. Pour les délais plus courts, je m\'adapte autant que possible.' },
-                { q: 'Demandez-vous un acompte ?', a: 'Oui, 25% d\'acompte pour réserver votre date. Solde dû à la fin de la mission.' },
-                { q: 'Quelle est votre politique d\'annulation ?', a: 'Plus de 7 jours d\'avis : remboursement complet. 7 jours ou moins : frais de 50%. Moins de 24 heures : frais complets ou reprogrammation possible.' },
-                { q: 'Travaillez-vous à distance ?', a: 'Absolument. Je propose de l\'interprétation à distance via Zoom, Teams et autres plateformes avec équipement professionnel.' },
-                { q: 'Travaillez-vous avec des interprètes d\'équipe ?', a: 'Oui. Pour les projets d\'interprétation simultanée importants, je travaille avec des collègues de confiance.' },
-                { q: 'Comment vous préparez-vous ?', a: 'Je demande les documents, matériaux de fond et listes de terminologie à l\'avance. Je recherche le contexte et prépare des glossaires pour une qualité optimale.' }
-            ]
-        };
-
-        function toggleMenu() {
-            document.getElementById('dropdown').classList.toggle('show');
-        }
-
-        function closeMenu() {
-            document.getElementById('dropdown').classList.remove('show');
-        }
 
         function setLanguage(lang) {
             currentLanguage = lang;
@@ -1016,139 +720,80 @@
             currentCurrency = curr;
             document.getElementById('curr-chf').classList.toggle('active', curr === 'chf');
             document.getElementById('curr-eur').classList.toggle('active', curr === 'eur');
-            updatePricing();
+            renderPricing();
             localStorage.setItem('currency', curr);
         }
 
         function updateContent() {
-            const texts = content[currentLanguage];
-            document.getElementById('hero-title').textContent = texts.heroTitle;
-            document.getElementById('hero-subtitle').textContent = texts.heroSubtitle;
-            document.getElementById('cta-contact').textContent = texts.ctaContact;
-            document.getElementById('services-title').textContent = texts.servicesTitle;
-            document.getElementById('pricing-title').textContent = texts.pricingTitle;
-            document.getElementById('pricing-note').textContent = texts.pricingNote;
-            document.getElementById('why-title').textContent = texts.whyTitle;
-            document.getElementById('about-title').textContent = texts.aboutTitle;
-            document.getElementById('about-p1').textContent = texts.aboutP1;
-            document.getElementById('about-p2').textContent = texts.aboutP2;
-            document.getElementById('about-p3').textContent = texts.aboutP3;
-            document.getElementById('contact-title').textContent = texts.contactTitle;
-            document.getElementById('contact-info-title').textContent = texts.contactInfoTitle;
-            document.getElementById('social-title').textContent = texts.socialTitle;
-            document.getElementById('form-name-label').textContent = texts.formNameLabel;
-            document.getElementById('form-email-label').textContent = texts.formEmailLabel;
-            document.getElementById('form-org-label').textContent = texts.formOrgLabel;
-            document.getElementById('form-service-label').textContent = texts.formServiceLabel;
-            document.getElementById('form-message-label').textContent = texts.formMessageLabel;
-            document.getElementById('form-consent-label').textContent = texts.formConsentLabel;
-            document.getElementById('form-submit').textContent = texts.formSubmit;
-            document.getElementById('faq-title').textContent = texts.faqTitle;
-            document.getElementById('footer-text').textContent = texts.footerText;
-            document.getElementById('footer-privacy').textContent = texts.footerPrivacy;
-            document.getElementById('footer-terms').textContent = texts.footerTerms;
-            document.getElementById('footer-cookies').textContent = texts.footerCookies;
-            document.getElementById('cookie-text').textContent = texts.cookieText;
-            document.getElementById('phone-ch-label').textContent = texts.phoneChLabel;
-            document.getElementById('phone-fr-label').textContent = texts.phoneFrLabel;
+            const t = content[currentLanguage];
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('cta-text').textContent = t.ctaText;
+            document.getElementById('services-title').textContent = t.servicesTitle;
+            document.getElementById('pricing-title').textContent = t.pricingTitle;
+            document.getElementById('about-title').textContent = t.aboutTitle;
+            document.getElementById('about-p1').textContent = t.aboutP1;
+            document.getElementById('about-p2').textContent = t.aboutP2;
+            document.getElementById('about-p3').textContent = t.aboutP3;
+            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('contact-heading').textContent = t.contactHeading;
+            document.getElementById('follow-heading').textContent = t.followHeading;
+            document.getElementById('phone-ch-label').textContent = t.phoneCh;
+            document.getElementById('phone-fr-label').textContent = t.phoneFr;
+            document.getElementById('name-label').textContent = t.nameLabel;
+            document.getElementById('email-label').textContent = t.emailLabel;
+            document.getElementById('org-label').textContent = t.orgLabel;
+            document.getElementById('service-label').textContent = t.serviceLabel;
+            document.getElementById('message-label').textContent = t.messageLabel;
+            document.getElementById('submit-label').textContent = t.submitLabel;
+            document.getElementById('footer-text').textContent = t.footerText;
 
             renderServices();
             renderPricing();
-            renderWhyChoose();
-            renderFAQ();
         }
 
         function renderServices() {
             const grid = document.getElementById('services-grid');
-            grid.innerHTML = '';
             const serviceImages = ['images/8.jpg', 'images/9.jpg', 'images/13.jpg', 'images/12.jpg', 'images/11.jpg', 'images/10.jpg'];
-            services[currentLanguage].forEach((service, idx) => {
-                const card = document.createElement('div');
-                card.className = 'service-card';
-                card.innerHTML = `
+            grid.innerHTML = services[currentLanguage].map((svc, i) => `
+                <div class="service-card">
                     <div class="service-image">
-                        <img src="${serviceImages[idx]}" alt="${service.title}">
+                        <img src="${serviceImages[i]}" alt="${svc.title}">
                     </div>
-                    <h3>${service.title}</h3>
-                    <p>${service.desc}</p>
-                `;
-                grid.appendChild(card);
-            });
+                    <div class="service-content">
+                        <h3>${svc.title}</h3>
+                        <p>${svc.desc}</p>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderPricing() {
-            const grid = document.getElementById('pricing-cards');
-            grid.innerHTML = '';
-            const priceList = pricing[currentLanguage];
-            priceList.forEach(item => {
-                const price = currentCurrency === 'chf' ? item.price : item.priceeur;
-                const card = document.createElement('div');
-                card.className = 'price-card';
-                card.innerHTML = `<h3>${item.title}</h3><p>${item.desc}</p><div class="price-amount">${price}</div>`;
-                grid.appendChild(card);
-            });
-        }
-
-        function renderWhyChoose() {
-            const grid = document.getElementById('why-grid');
-            grid.innerHTML = '';
-            whyChoose[currentLanguage].forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'why-card';
-                card.innerHTML = `<h3>${item.title}</h3><p>${item.desc}</p>`;
-                grid.appendChild(card);
-            });
-        }
-
-        function renderFAQ() {
-            const wrapper = document.getElementById('faq-list');
-            wrapper.innerHTML = '';
-            faqs[currentLanguage].forEach((faq, idx) => {
-                const item = document.createElement('div');
-                item.className = 'faq-item';
-                item.innerHTML = `
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>${faq.q}</span>
-                        <span class="faq-icon">▼</span>
+            const grid = document.getElementById('pricing-grid');
+            grid.innerHTML = pricing[currentLanguage].map(p => {
+                const price = currentCurrency === 'chf' ? p.price : p.priceEur;
+                return `
+                    <div class="price-card">
+                        <h3>${p.title}</h3>
+                        <div class="desc">${currentLanguage === 'en' ? 'per hour' : 'par heure'}</div>
+                        <div class="price-amount">${price}</div>
                     </div>
-                    <div class="faq-answer">${faq.a}</div>
                 `;
-                wrapper.appendChild(item);
-            });
+            }).join('');
         }
 
-        function toggleFAQ(question) {
-            question.parentElement.classList.toggle('open');
-        }
-
-        function updatePricing() {
-            renderPricing();
-        }
-
-        function scrollTo(section) {
-            const el = document.getElementById(section);
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function handleFormSubmit(e) {
+        function handleSubmit(e) {
             e.preventDefault();
-            alert('Thank you for your interest! I will contact you shortly.');
-            document.getElementById('contact-form').reset();
-        }
-
-        function acceptCookies() {
-            document.getElementById('cookie-banner').classList.remove('show');
-            localStorage.setItem('cookies-accepted', 'true');
+            alert('Thank you for your request. Rebecca will contact you shortly.');
+            e.target.reset();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('language');
-            if (saved && saved !== currentLanguage) setLanguage(saved);
+            const savedLang = localStorage.getItem('language') || 'en';
+            const savedCurr = localStorage.getItem('currency') || 'chf';
+            if (savedLang !== 'en') setLanguage(savedLang);
+            if (savedCurr !== 'chf') setCurrency(savedCurr);
             else updateContent();
-
-            if (!localStorage.getItem('cookies-accepted')) {
-                document.getElementById('cookie-banner').classList.add('show');
-            }
         });
     </script>
 </body>

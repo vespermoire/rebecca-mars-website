@@ -10,7 +10,7 @@
     <style>
         :root {
             --navy: #1a2d5e;
-            --gold: #d4a574;
+            --gold: #a68860;
             --white: #ffffff;
             --off-white: #f8f9fa;
             --dark-gray: #1f2937;
@@ -53,7 +53,7 @@
         .logo-section { flex: 1; }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2.4rem;
             font-weight: 700;
             color: var(--white);
             letter-spacing: -0.03em;
@@ -63,10 +63,9 @@
         .tagline {
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.85);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            letter-spacing: 0.05em;
             font-weight: 500;
-            margin-top: 0.25rem;
+            margin-top: 0.3rem;
         }
 
         .nav-center { flex: 0; }
@@ -160,6 +159,14 @@
         }
 
         .ws-btn i { font-size: 1.1rem; }
+
+        .toggle-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
 
         .toggle-group {
             display: flex;
@@ -262,7 +269,7 @@
 
         /* SECTIONS */
         section {
-            padding: 8rem 2rem;
+            padding: 4rem 2rem;
             max-width: 1280px;
             margin: 0 auto;
         }
@@ -661,7 +668,7 @@
         <nav>
             <div class="logo-section">
                 <div class="logo">Rebecca Mars</div>
-                <div class="tagline">French–English Interpreter, Geneva</div>
+                <div class="tagline">Interpreter & Translator</div>
             </div>
             <div class="nav-center">
                 <div class="nav-menu">
@@ -685,13 +692,19 @@
                         <i class="fab fa-whatsapp"></i> France
                     </a>
                 </div>
-                <div class="toggle-group">
-                    <button class="toggle-btn active" id="lang-en" onclick="setLanguage('en')" title="English">🇬🇧</button>
-                    <button class="toggle-btn" id="lang-fr" onclick="setLanguage('fr')" title="Français">🇫🇷</button>
+                <div>
+                    <span class="toggle-label">Language</span>
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" id="lang-en" onclick="setLanguage('en')" title="English">EN</button>
+                        <button class="toggle-btn" id="lang-fr" onclick="setLanguage('fr')" title="Français">FR</button>
+                    </div>
                 </div>
-                <div class="toggle-group">
-                    <button class="toggle-btn active" id="curr-chf" onclick="setCurrency('chf')" title="Swiss Francs">🇨🇭</button>
-                    <button class="toggle-btn" id="curr-eur" onclick="setCurrency('eur')" title="Euros">🇪🇺</button>
+                <div>
+                    <span class="toggle-label">Currency</span>
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" id="curr-chf" onclick="setCurrency('chf')" title="Swiss Francs">CHF</button>
+                        <button class="toggle-btn" id="curr-eur" onclick="setCurrency('eur')" title="Euros">EUR</button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -886,14 +899,18 @@
             en: [
                 { title: 'Consecutive Interpretation', desc: 'For professional meetings and events. Comprehensive note-taking and faithful interpretations.' },
                 { title: 'Simultaneous Interpretation', desc: 'For conferences and major events. Team interpretation as required.' },
+                { title: 'Chuchotage', desc: 'Whispered interpretation for delegations and small group meetings.' },
                 { title: 'Remote Interpretation', desc: 'Zoom, Teams and hybrid meetings. Simple setup and professional quality.' },
-                { title: 'Translation', desc: 'Professional documents, reports and communications.' }
+                { title: 'Translation', desc: 'Professional documents, reports and communications.' },
+                { title: 'Language Support', desc: 'Terminology preparation, speaker coaching and meeting support.' }
             ],
             fr: [
                 { title: 'Interprétation consécutive', desc: 'Réunions professionnelles et événements. Prise de note complète.' },
                 { title: 'Interprétation simultanée', desc: 'Conférences et événements importants. Travail en équipe selon les besoins.' },
+                { title: 'Chuchotage', desc: 'Interprétation murmurée pour délégations et petites réunions.' },
                 { title: 'Interprétation à distance', desc: 'Zoom, Teams et réunions hybrides. Configuration simple et qualité professionnelle.' },
-                { title: 'Traduction', desc: 'Documents professionnels, rapports et communications.' }
+                { title: 'Traduction', desc: 'Documents professionnels, rapports et communications.' },
+                { title: 'Accompagnement linguistique', desc: 'Préparation terminologique, coaching d\'orateurs, accompagnement de réunions.' }
             ]
         };
 

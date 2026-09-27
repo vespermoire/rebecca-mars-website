@@ -53,8 +53,9 @@
             color: var(--white);
             font-family: 'Lora', serif;
             letter-spacing: -0.5px;
-            padding-bottom: 0.05rem;
+            padding-bottom: 0;
             border-bottom: 3px solid var(--gold);
+            line-height: 1;
         }
 
         .tagline {
@@ -151,7 +152,7 @@
 
         .whatsapp-section {
             background: var(--navy);
-            padding: 1rem 2rem;
+            padding: 0.7rem 2rem;
             text-align: center;
             margin: 2rem 0;
             border-radius: 8px;
@@ -274,7 +275,7 @@
             padding: 0.9rem 2.2rem;
             background: var(--gold);
             color: var(--navy);
-            border: 2px solid var(--gold);
+            border: 3px solid var(--navy);
             border-radius: 6px;
             font-weight: 600;
             font-size: 1rem;
@@ -387,7 +388,7 @@
         .price-card {
             border: none;
             border-radius: 8px;
-            padding: 1rem 1.2rem;
+            padding: 0.7rem 1rem;
             text-align: center;
             transition: all 200ms ease;
             background: var(--navy);
@@ -403,26 +404,26 @@
 
         .price-card h3 {
             font-family: 'Lora', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--white);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
             border-bottom: 2px solid var(--gold);
         }
 
         .price-card .desc {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: rgba(255,255,255,0.9);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.2rem;
         }
 
         .price-amount {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: var(--gold);
             font-family: 'Lora', serif;
-            margin: 0.4rem 0;
+            margin: 0.2rem 0;
         }
 
         /* CONTACT */
@@ -443,7 +444,7 @@
         }
 
         .contact-detail {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         .contact-label {
@@ -536,7 +537,7 @@
             padding: 0.9rem 2rem;
             background: var(--gold);
             color: var(--navy);
-            border: none;
+            border: 3px solid var(--navy);
             border-radius: 6px;
             font-weight: 600;
             font-size: 1rem;
@@ -661,6 +662,13 @@
             justify-content: center;
             align-items: center;
             margin-top: 1rem;
+            width: 100%;
+        }
+
+        .credentials-badges span:nth-child(4) {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .credential-badge {
@@ -828,11 +836,11 @@
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
-                <div style="display: flex; gap: 1rem; flex-direction: column; margin-top: 1.5rem;">
-                    <a href="https://wa.me/41796805248?text=Hello%20Rebecca%2C%20I%27d%20like%20to%20discuss%20an%20interpretation%20project" class="ws-btn" target="_blank" style="justify-content: center;">
+                <div style="display: flex; gap: 0.8rem; flex-direction: column; margin-top: 1.5rem; align-items: flex-start;">
+                    <a href="https://wa.me/41796805248?text=Hello%20Rebecca%2C%20I%27d%20like%20to%20discuss%20an%20interpretation%20project" class="ws-btn" target="_blank" style="padding: 0.5rem 1rem; width: fit-content;">
                         <i class="fab fa-whatsapp"></i> Switzerland: +41 79 680 52 48
                     </a>
-                    <a href="https://wa.me/33788157064?text=Bonjour%20Rebecca%2C%20j%27aimerais%20discuter%20d%27un%20projet%20d%27interpr%C3%A9tation" class="ws-btn" target="_blank" style="justify-content: center;">
+                    <a href="https://wa.me/33788157064?text=Bonjour%20Rebecca%2C%20j%27aimerais%20discuter%20d%27un%20projet%20d%27interpr%C3%A9tation" class="ws-btn" target="_blank" style="padding: 0.5rem 1rem; width: fit-content;">
                         <i class="fab fa-whatsapp"></i> France: +33 7 88 15 70 64
                     </a>
                 </div>

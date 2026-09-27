@@ -77,10 +77,48 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 150ms ease;
+            position: relative;
         }
 
         .menu-btn:hover {
             background: rgba(255,255,255,0.2);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            min-width: 200px;
+            margin-top: 0.5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 150ms ease;
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--light);
+            color: var(--gold);
         }
 
         .ws-btn {
@@ -548,6 +586,58 @@
             margin: 0.3rem 0;
         }
 
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--navy);
+            transition: all 150ms ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(212,175,55,0.1);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 300ms ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 1.5rem;
+            background: var(--white);
+            border-top: 2px solid var(--border);
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             section { padding: 2rem 1.5rem; }
             section h2 { font-size: 1.8rem; }
@@ -564,7 +654,16 @@
                 <div class="tagline">Interpreter & Translator</div>
             </div>
             <div class="nav-right">
-                <button class="menu-btn" onclick="toggleMenu()" title="Menu">☰</button>
+                <div style="position: relative;">
+                    <button class="menu-btn" onclick="toggleDropdown()" title="Menu">☰</button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="#services">Services</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
                 <div class="toggles">
                     <div class="toggle-section">
                         <span class="toggle-label">Language</span>
@@ -618,6 +717,11 @@
     <section id="pricing">
         <h2 id="pricing-title">Pricing</h2>
         <div class="pricing-grid" id="pricing-grid"></div>
+    </section>
+
+    <section id="faq">
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-list" id="faq-list"></div>
     </section>
 
     <section id="about">
@@ -676,6 +780,12 @@
                     <label for="service" id="service-label">Service</label>
                     <select id="service" name="service" required>
                         <option value="">Select a service</option>
+                        <option value="consecutive">Consecutive Interpretation</option>
+                        <option value="simultaneous">Simultaneous Interpretation</option>
+                        <option value="chuchotage">Chuchotage</option>
+                        <option value="remote">Remote Interpretation</option>
+                        <option value="translation">Translation</option>
+                        <option value="support">Language Support</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -697,7 +807,10 @@
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#services">Interpretation</a>
+                <a href="#services">Consecutive Interpretation</a>
+                <a href="#services">Simultaneous Interpretation</a>
+                <a href="#services">Chuchotage</a>
+                <a href="#services">Remote Interpretation</a>
                 <a href="#services">Translation</a>
                 <a href="#services">Language Support</a>
             </div>
@@ -724,9 +837,37 @@
         let currentLanguage = 'en';
         let currentCurrency = 'chf';
 
-        function toggleMenu() {
-            console.log('Menu toggled');
+        function toggleDropdown() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.classList.toggle('active');
         }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('dropdown-menu');
+            const btn = document.querySelector('.menu-btn');
+            if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        const faqs = {
+            en: [
+                { q: 'What is your availability?', a: 'I work flexibly based on client needs. Most projects can be scheduled within 2 weeks notice. Contact me for urgent requests.' },
+                { q: 'Do you require a deposit?', a: 'Yes, a 25% deposit is required to hold your booking date. Final balance is due upon completion.' },
+                { q: 'What is your cancellation policy?', a: 'More than 7 days notice: full refund. 7 days or less: 50% charge. Less than 24 hours: full charge or rescheduling available.' },
+                { q: 'Can you work remotely?', a: 'Absolutely. I offer remote interpretation via Zoom, Teams and other platforms with professional equipment setup.' },
+                { q: 'Do you work with team interpreters?', a: 'Yes. For large simultaneous interpretation projects, I work with trusted colleagues for seamless team interpretation.' },
+                { q: 'How do you prepare for assignments?', a: 'I request documents, background materials and terminology lists in advance. I research context and prepare glossaries for optimal quality.' }
+            ],
+            fr: [
+                { q: 'Quelle est votre disponibilité ?', a: 'Je travaille avec flexibilité selon les besoins du client. La plupart des projets peuvent être programmés dans un délai de 2 semaines. Contactez-moi pour les demandes urgentes.' },
+                { q: 'Demandez-vous un acompte ?', a: 'Oui, un acompte de 25% est requis pour réserver votre date. Le solde est dû à la fin de la mission.' },
+                { q: 'Quelle est votre politique d\'annulation ?', a: 'Plus de 7 jours d\'avis : remboursement complet. 7 jours ou moins : frais de 50%. Moins de 24 heures : frais complets ou reprogrammation possible.' },
+                { q: 'Travaillez-vous à distance ?', a: 'Absolument. Je propose de l\'interprétation à distance via Zoom, Teams et autres plateformes avec équipement professionnel.' },
+                { q: 'Travaillez-vous avec des interprètes d\'équipe ?', a: 'Oui. Pour les projets d\'interprétation simultanée importants, je travaille avec des collègues de confiance.' },
+                { q: 'Comment vous préparez-vous pour les missions ?', a: 'Je demande les documents, matériaux de fond et listes de terminologie à l\'avance. Je recherche le contexte et prépare des glossaires pour une qualité optimale.' }
+            ]
+        };
 
         const content = {
             en: {
@@ -739,6 +880,7 @@
                 aboutP1: 'I am an independent French–English interpreter and translator based in the Geneva region. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.',
                 aboutP2: 'Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and professional follow-up.',
                 aboutP3: 'My commitment: direct access to a prepared, accountable professional interpreter.',
+                faqTitle: 'Frequently Asked Questions',
                 contactTitle: 'Contact & Quote Request',
                 contactHeading: 'Get in Touch',
                 followHeading: 'Follow',
@@ -762,6 +904,7 @@
                 aboutP1: 'Je suis interprète et traductrice indépendante français–anglais basée dans la région genevoise. Formée par Cambridge, examinatrice agréée, je combine 20 ans d\'expérience en enseignement linguistique avec une expertise en interprétation professionnelle pour les organisations internationales, ONG, cabinets juridiques et événements.',
                 aboutP2: 'Bilingue de naissance (mère anglaise, père français, élevée en France) avec une maîtrise complète des nuances culturelles et linguistiques. Chaque mission est préparée avec soin : recherche terminologique, familiarisation avec les documents, étude du contexte et suivi professionnel.',
                 aboutP3: 'Mon engagement : accès direct à une interprète préparée et responsable.',
+                faqTitle: 'Questions Fréquemment Posées',
                 contactTitle: 'Contact et Demande de Devis',
                 contactHeading: 'Nous Contacter',
                 followHeading: 'Nous Suivre',
@@ -842,6 +985,7 @@
             document.getElementById('about-p1').textContent = t.aboutP1;
             document.getElementById('about-p2').textContent = t.aboutP2;
             document.getElementById('about-p3').textContent = t.aboutP3;
+            document.getElementById('faq-title').textContent = t.faqTitle;
             document.getElementById('contact-title').textContent = t.contactTitle;
             document.getElementById('contact-heading').textContent = t.contactHeading;
             document.getElementById('follow-heading').textContent = t.followHeading;
@@ -857,6 +1001,24 @@
 
             renderServices();
             renderPricing();
+            renderFAQ();
+        }
+
+        function renderFAQ() {
+            const list = document.getElementById('faq-list');
+            list.innerHTML = faqs[currentLanguage].map((faq, i) => `
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>${faq.q}</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">${faq.a}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleFAQ(item) {
+            item.classList.toggle('open');
         }
 
         function renderServices() {

@@ -42,17 +42,18 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             gap: 2rem;
+            min-height: 80px;
         }
 
         .logo {
-            font-size: 3.6rem;
+            font-size: 4.2rem;
             font-weight: 600;
             color: var(--white);
             font-family: 'Lora', serif;
             letter-spacing: -0.5px;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
             border-bottom: 3px solid var(--gold);
         }
 
@@ -61,13 +62,14 @@
             color: var(--white);
             font-weight: 500;
             letter-spacing: 0.05em;
-            margin-top: 0.6rem;
+            margin-top: 0.2rem;
         }
 
         .nav-right {
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            gap: 1rem;
         }
 
         .menu-btn {
@@ -148,12 +150,13 @@
         .ws-btn i { font-size: 1.1rem; }
 
         .whatsapp-section {
-            background: var(--light);
+            background: var(--navy);
             padding: 2rem;
             text-align: center;
             margin: 2rem 0;
             border-radius: 8px;
-            border: 2px solid var(--border);
+            border: none;
+            color: var(--white);
         }
 
         .whatsapp-buttons {
@@ -166,7 +169,7 @@
         .toggles {
             display: flex;
             gap: 1.5rem;
-            align-items: center;
+            align-items: flex-end;
         }
 
         .toggle-section {
@@ -381,31 +384,36 @@
         }
 
         .price-card {
-            border: 2px solid var(--border);
+            border: none;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.2rem;
             text-align: center;
             transition: all 200ms ease;
-            background: var(--light);
+            background: var(--navy);
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .price-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 6px 16px rgba(212,175,55,0.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         }
 
         .price-card h3 {
             font-family: 'Lora', serif;
             font-size: 1.2rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
             font-weight: 600;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--gold);
         }
 
         .price-card .desc {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1rem;
         }
 
         .price-amount {
@@ -470,18 +478,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid var(--border);
+            border: none;
             border-radius: 8px;
-            color: var(--navy);
+            background: var(--navy);
+            color: var(--white);
             font-size: 1.2rem;
             text-decoration: none;
             transition: all 150ms ease;
         }
 
         .social-icon:hover {
-            border-color: var(--gold);
             background: var(--gold);
-            color: var(--white);
+            color: var(--navy);
         }
 
         /* FORM */
@@ -644,11 +652,44 @@
             display: block;
         }
 
+        .credentials-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .credential-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .credential-badge i {
+            font-size: 1rem;
+            color: var(--gold);
+        }
+
+        .celta-logo {
+            max-width: 180px;
+            height: auto;
+            margin: 1.5rem auto;
+        }
+
         @media (max-width: 768px) {
             section { padding: 2rem 1.5rem; }
             section h2 { font-size: 1.8rem; }
             .contact-container { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 1.8rem; }
+            .credentials-badges { flex-direction: column; }
         }
     </style>
 </head>
@@ -732,20 +773,24 @@
             <p id="about-p2">Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and professional follow-up.</p>
             <p id="about-p3">My commitment: direct access to a prepared, accountable professional interpreter.</p>
             <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
-                <p style="font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Cambridge Certified Language Teacher & Approved Examiner</p>
-                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📜</div>
-                        <p style="font-size: 0.9rem; color: #666;">Cambridge CELTA</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✓</div>
-                        <p style="font-size: 0.9rem; color: #666;">Approved Examiner</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎓</div>
-                        <p style="font-size: 0.9rem; color: #666;">20+ Years Experience</p>
-                    </div>
+                <img src="images/celta-logo.png" alt="Cambridge CELTA Centre" class="celta-logo" style="height: 60px; object-fit: contain;">
+                <div class="credentials-badges" style="margin-top: 1.5rem;">
+                    <span class="credential-badge">
+                        <i class="fas fa-check-circle"></i>
+                        Professeure native britannique
+                    </span>
+                    <span class="credential-badge">
+                        <i class="fas fa-check-circle"></i>
+                        Certifiée CELTA Cambridge
+                    </span>
+                    <span class="credential-badge">
+                        <i class="fas fa-check-circle"></i>
+                        Examinatrice Cambridge
+                    </span>
+                    <span class="credential-badge">
+                        <i class="fas fa-check-circle"></i>
+                        20+ ans d'expérience
+                    </span>
                 </div>
             </div>
         </div>
@@ -1067,7 +1112,7 @@
                 return `
                     <div class="price-card">
                         <h3>${p.title}</h3>
-                        <div class="desc">${currentLanguage === 'en' ? 'per hour' : 'par heure'}</div>
+                        <div class="desc">${currentLanguage === 'en' ? 'Price from' : 'À partir de'}</div>
                         <div class="price-amount">${price}</div>
                     </div>
                 `;

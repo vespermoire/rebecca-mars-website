@@ -152,16 +152,21 @@
 
         .whatsapp-section {
             background: var(--navy);
-            padding: 0.5rem 2rem;
+            padding: 0.3rem 2rem;
             text-align: center;
             margin: 2rem 0;
             border-radius: 8px;
             border: none;
             color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
         }
 
         .whatsapp-section p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             font-size: 0.95rem;
         }
 
@@ -767,7 +772,7 @@
     </div>
 
     <div class="whatsapp-section">
-        <p style="margin-bottom: 1rem; color: var(--text); font-weight: 500;">Contact Rebecca directly via WhatsApp</p>
+        <p style="color: var(--text); font-weight: 500;">Contact Rebecca directly via WhatsApp</p>
         <div class="whatsapp-buttons">
             <a href="https://wa.me/41796805248?text=Hello%20Rebecca%2C%20I%27d%20like%20to%20discuss%20an%20interpretation%20project" class="ws-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Switzerland: +41 79 680 52 48
@@ -1039,18 +1044,18 @@
 
         const pricing = {
             en: [
-                { title: 'Consecutive', price: 'CHF 125', priceEur: 'EUR 110' },
-                { title: 'Simultaneous', price: 'Quote', priceEur: 'Quote' },
+                { title: 'Consecutive Interpretation', price: 'CHF 125', priceEur: 'EUR 110' },
+                { title: 'Simultaneous Interpretation', price: 'Quote', priceEur: 'Quote' },
                 { title: 'Chuchotage', price: 'Quote', priceEur: 'Quote' },
-                { title: 'Remote', price: 'CHF 100', priceEur: 'EUR 90' },
+                { title: 'Remote Interpretation', price: 'CHF 100', priceEur: 'EUR 90' },
                 { title: 'Translation', price: 'CHF 65', priceEur: 'EUR 60' },
                 { title: 'Language Support', price: 'CHF 110', priceEur: 'EUR 100' }
             ],
             fr: [
-                { title: 'Consécutive', price: 'CHF 125', priceEur: 'EUR 110' },
-                { title: 'Simultanée', price: 'Devis', priceEur: 'Devis' },
+                { title: 'Interprétation Consécutive', price: 'CHF 125', priceEur: 'EUR 110' },
+                { title: 'Interprétation Simultanée', price: 'Devis', priceEur: 'Devis' },
                 { title: 'Chuchotage', price: 'Devis', priceEur: 'Devis' },
-                { title: 'Distante', price: 'CHF 100', priceEur: 'EUR 90' },
+                { title: 'Interprétation Distante', price: 'CHF 100', priceEur: 'EUR 90' },
                 { title: 'Traduction', price: 'CHF 65', priceEur: 'EUR 60' },
                 { title: 'Accompagnement', price: 'CHF 110', priceEur: 'EUR 100' }
             ]

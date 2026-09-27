@@ -33,7 +33,7 @@
             top: 0;
             z-index: 1000;
             background: var(--navy);
-            padding: 1rem 2rem;
+            padding: 0.8rem 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
@@ -152,7 +152,7 @@
 
         .whatsapp-section {
             background: var(--navy);
-            padding: 0.7rem 2rem;
+            padding: 0.5rem 2rem;
             text-align: center;
             margin: 2rem 0;
             border-radius: 8px;
@@ -160,9 +160,14 @@
             color: var(--white);
         }
 
+        .whatsapp-section p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
         .whatsapp-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -215,9 +220,15 @@
         }
 
         @media (max-width: 768px) {
-            nav { gap: 1rem; }
-            .toggles { gap: 0.8rem; }
+            nav { gap: 0.5rem; min-height: 60px; }
+            .nav-right { flex-direction: row; gap: 0.5rem; }
+            .toggles { gap: 0.5rem; }
+            .toggle-label { font-size: 0.55rem; }
+            .toggle-btn { padding: 0.25rem 0.4rem; font-size: 0.65rem; }
+            .menu-btn { padding: 0.3rem 0.5rem; font-size: 1rem; }
             .ws-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+            .logo { font-size: 2.8rem; }
+            .tagline { font-size: 0.7rem; }
         }
 
         /* HERO */

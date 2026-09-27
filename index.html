@@ -53,7 +53,7 @@
             color: var(--white);
             font-family: 'Lora', serif;
             letter-spacing: -0.5px;
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.05rem;
             border-bottom: 3px solid var(--gold);
         }
 
@@ -151,7 +151,7 @@
 
         .whatsapp-section {
             background: var(--navy);
-            padding: 2rem;
+            padding: 1rem 2rem;
             text-align: center;
             margin: 2rem 0;
             border-radius: 8px;
@@ -347,18 +347,19 @@
         .service-content {
             padding: 1.8rem;
             border-top: 3px solid var(--gold);
+            background: var(--navy);
         }
 
         .service-card h3 {
             font-family: 'Lora', serif;
             font-size: 1.2rem;
-            color: var(--navy);
+            color: var(--white);
             margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
         .service-card p {
-            color: #666;
+            color: rgba(255,255,255,0.9);
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -386,7 +387,7 @@
         .price-card {
             border: none;
             border-radius: 8px;
-            padding: 1.2rem;
+            padding: 1rem 1.2rem;
             text-align: center;
             transition: all 200ms ease;
             background: var(--navy);
@@ -404,16 +405,16 @@
             font-family: 'Lora', serif;
             font-size: 1.2rem;
             color: var(--white);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             font-weight: 600;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
             border-bottom: 2px solid var(--gold);
         }
 
         .price-card .desc {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0.4rem;
         }
 
         .price-amount {
@@ -421,6 +422,7 @@
             font-weight: 600;
             color: var(--gold);
             font-family: 'Lora', serif;
+            margin: 0.4rem 0;
         }
 
         /* CONTACT */
@@ -658,6 +660,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            margin-top: 1rem;
         }
 
         .credential-badge {
@@ -772,9 +775,9 @@
             <p id="about-p1">I am an independent French–English interpreter and translator based in the Geneva region. Cambridge-certified language teacher and approved examiner, I combine 20 years of language teaching experience with professional interpretation expertise for international organizations, NGOs, law firms and events.</p>
             <p id="about-p2">Native bilingual (English mother, French father, raised in France) with complete command of the cultural and linguistic nuances of both languages. Every assignment is carefully prepared: terminology research, document familiarization, context study, and professional follow-up.</p>
             <p id="about-p3">My commitment: direct access to a prepared, accountable professional interpreter.</p>
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
-                <img src="images/celta-logo.png" alt="Cambridge CELTA Centre" class="celta-logo" style="height: 60px; object-fit: contain;">
-                <div class="credentials-badges" style="margin-top: 1.5rem;">
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--gold); text-align: center;">
+                <img src="images/celta-logo.png" alt="Cambridge CELTA Centre" class="celta-logo" style="height: 50px; object-fit: contain; margin-bottom: 0.5rem;">
+                <div class="credentials-badges">
                     <span class="credential-badge">
                         <i class="fas fa-check-circle"></i>
                         Professeure native britannique
@@ -823,6 +826,14 @@
                     </a>
                     <a href="https://facebook.com/rebecca-mars" class="social-icon" target="_blank" title="Facebook">
                         <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-direction: column; margin-top: 1.5rem;">
+                    <a href="https://wa.me/41796805248?text=Hello%20Rebecca%2C%20I%27d%20like%20to%20discuss%20an%20interpretation%20project" class="ws-btn" target="_blank" style="justify-content: center;">
+                        <i class="fab fa-whatsapp"></i> Switzerland: +41 79 680 52 48
+                    </a>
+                    <a href="https://wa.me/33788157064?text=Bonjour%20Rebecca%2C%20j%27aimerais%20discuter%20d%27un%20projet%20d%27interpr%C3%A9tation" class="ws-btn" target="_blank" style="justify-content: center;">
+                        <i class="fab fa-whatsapp"></i> France: +33 7 88 15 70 64
                     </a>
                 </div>
             </div>
@@ -1114,6 +1125,7 @@
                         <h3>${p.title}</h3>
                         <div class="desc">${currentLanguage === 'en' ? 'Price from' : 'À partir de'}</div>
                         <div class="price-amount">${price}</div>
+                        <div class="desc" style="margin-bottom: 0;">${currentLanguage === 'en' ? 'per hour' : 'par heure'}</div>
                     </div>
                 `;
             }).join('');

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rebecca Mars Blog - Stories from professional interpretation at the UN and international events.">
+    <title>Blog - Rebecca Mars</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --navy: #1a3a52;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --light: #f5f3f0;
+            --text: #2c3e50;
+            --border: #e0ddd8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navy);
+            padding: 0.8rem 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+            min-height: 80px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--white);
+            font-family: 'Lora', serif;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            border-bottom: 3px solid var(--gold);
+            line-height: 1;
+            transition: all 200ms ease;
+        }
+
+        .logo:hover {
+            color: var(--gold);
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--white);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 0.2rem;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .blog-breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .blog-breadcrumb a {
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .blog-breadcrumb a:hover {
+            color: var(--gold);
+        }
+
+        .blog-post {
+            line-height: 1.8;
+        }
+
+        .blog-post h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.4rem;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: #999;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-post p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .blog-post em {
+            font-style: italic;
+            color: var(--navy);
+        }
+
+        .blog-post figure {
+            margin: 2rem 0;
+        }
+
+        .blog-post figure img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .blog-post figcaption {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .blog-divider {
+            margin: 3rem 0;
+            border: none;
+            border-top: 2px solid var(--gold);
+        }
+
+        .author-bio {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin: 2rem 0;
+        }
+
+        .author-bio img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .author-bio h3 {
+            font-family: 'Lora', serif;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .author-bio p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .blog-cta {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .blog-cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 200ms ease;
+            font-size: 1.05rem;
+        }
+
+        .blog-cta-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.2);
+        }
+
+        .blog-contact {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .blog-contact a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 150ms ease;
+        }
+
+        .blog-contact a:hover {
+            color: var(--gold);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h4 {
+            font-family: 'Lora', serif;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+        }
+
+        footer a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 150ms ease;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        footer .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            main { padding: 2rem 1.5rem; }
+            .blog-post h1 { font-size: 1.8rem; }
+            .author-bio {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .author-bio img {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="index.html" class="logo">Rebecca Mars</a>
+                <p class="tagline">Interpreter & Translator</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="blog-breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Blog</span>
+        </div>
+
+        <article class="blog-post">
+            <h1>Inside the room: interpreting at the United Nations</h1>
+            <p class="blog-meta">Geneva · October 2026</p>
+
+            <figure>
+                <img src="images/blog/rebecca_un_banner_full.jpg" alt="Rebecca Mars at the United Nations, Geneva">
+                <figcaption>At the United Nations, Geneva — October 2026.</figcaption>
+            </figure>
+
+            <p>In October 2026 I worked as a French–English interpreter at a side-event at the United Nations in Geneva, during proceedings dealing with assisted-dying legislation and the rights of persons with disabilities.</p>
+
+            <p>It is some of the most demanding work an interpreter can take on. These are not debates where a loose paraphrase will do. A single term carries legal weight: <em>aide à mourir</em> is not simply "euthanasia," <em>personne de confiance</em> has no clean English equivalent, and the distinction between <em>supported</em> and <em>substitute</em> decision-making can change the meaning of an entire intervention. Getting it right means knowing the subject as well as the language — the law, the medical framework, and the human-rights conventions underneath it.</p>
+
+            <figure>
+                <img src="images/blog/rebecca_un_booth.jpg" alt="View from the interpreter's booth at a UN session, Geneva">
+                <figcaption>Consecutive and simultaneous interpreting, French ↔ English.</figcaption>
+            </figure>
+
+            <p>What stays with me is the responsibility. When someone speaks about the most difficult moments of their life before an international committee, their words have to arrive in the other language with the same precision and the same dignity they were given. That is the whole job: not to add, not to soften, not to take a side — to let each speaker be heard exactly as they meant to be.</p>
+
+            <figure>
+                <img src="images/blog/rebecca_un_delegation.jpg" alt="At the United Nations, Geneva, October 2026">
+                <figcaption>United Nations, Geneva.</figcaption>
+            </figure>
+
+            <p>There is a practical reason organisations seek out interpreters like me for this work. Delegations attending the UN cannot simply rely on the in-house interpreting service — for side-events and many sessions, they bring their own. That makes the choice of interpreter their own responsibility, and in subjects this sensitive, experience and subject-matter command matter more than anything.</p>
+
+            <p>I work directly with the organisations I interpret for, across human-rights, legal and medical settings, in French and English. For larger assignments I work alongside a small network of trusted specialist colleagues, so capacity is never the limit.</p>
+
+            <hr class="blog-divider">
+
+            <div class="author-bio">
+                <img src="images/blog/rebecca_headshot_round.png" alt="Rebecca Mars">
+                <div>
+                    <h3>About Rebecca Mars</h3>
+                    <p>Rebecca Mars is a British–French bilingual interpreter and translator based near Geneva — English and French are both her mother tongues. She holds a CELTA from the University of Cambridge, is a Cambridge English examiner, has taught legal English to prosecutors and magistrates at the Court of Lyon, and founded a business-language school in France. She also holds a Bachelor of Business Administration in Business Law (Temple University) and a Master's in international management. She works across human-rights, legal and medical settings, in French and English.</p>
+                </div>
+            </div>
+
+            <div class="blog-cta">
+                <a href="index.html#contact" class="blog-cta-btn">Work with Rebecca</a>
+                <div class="blog-contact">
+                    <p>Preparing a session, a side-event, or documents that need to carry that level of accuracy?</p>
+                    <p><a href="mailto:hello@rebecca-mars.com">Email hello@rebecca-mars.com</a> or call / WhatsApp <a href="tel:+33788157064">+33 7 88 15 70 64</a></p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Follow</h4>
+                <a href="https://linkedin.com/in/rebecca-mars" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/rebecca.mars.interpreter" target="_blank">Instagram</a>
+                <a href="https://facebook.com/rebecca.mars.interpreter" target="_blank">Facebook</a>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="index.html#services">Consecutive Interpretation</a>
+                <a href="index.html#services">Simultaneous Interpretation</a>
+                <a href="index.html#services">Chuchotage</a>
+                <a href="index.html#services">Remote Interpretation</a>
+                <a href="index.html#services">Translation</a>
+                <a href="index.html#services">Language Support</a>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#about">About Rebecca</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Rebecca Mars. All rights reserved.</p>
+            <p>Geneva Region, Switzerland</p>
+        </div>
+    </footer>
+</body>
+</html>

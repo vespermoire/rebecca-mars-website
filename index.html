@@ -145,22 +145,23 @@
             top: 0;
             z-index: 1000;
             background: var(--navy);
-            padding: 1.2rem 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            border-bottom: 2px solid var(--gold);
+            padding: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            border: 3px solid var(--gold);
             position: relative;
+            min-height: 200px;
         }
 
         header::before {
             content: '';
             position: absolute;
-            bottom: 0.5rem;
-            left: 1.5rem;
-            width: 60px;
-            height: 60px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q40 20 35 40 Q30 60 50 85 Q70 60 65 40 Q60 20 50 10' fill='none' stroke='%23d4af37' stroke-width='1.5' opacity='0.4'/%3E%3Cpath d='M35 45 Q25 50 20 65' fill='none' stroke='%23d4af37' stroke-width='1' opacity='0.3'/%3E%3Cpath d='M65 45 Q75 50 80 65' fill='none' stroke='%23d4af37' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E") no-repeat center;
+            bottom: 1.5rem;
+            left: 2rem;
+            width: 80px;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 10 Q45 25 40 50 Q35 75 60 110 Q85 75 80 50 Q75 25 60 10 M35 60 Q20 70 10 90 M85 60 Q100 70 110 90' fill='none' stroke='%23d4af37' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E") no-repeat center;
             background-size: contain;
-            opacity: 0.4;
+            opacity: 0.5;
             animation: float 4s ease-in-out infinite;
         }
 
@@ -168,55 +169,66 @@
             content: '';
             position: absolute;
             top: 0;
-            right: -50px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--light);
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: -1;
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
+            max-width: 100%;
+            margin: 0;
+            padding: 1.5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 2rem;
-            min-height: 90px;
+            min-height: 200px;
+            position: relative;
+            z-index: 1;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
             animation: fadeInDown 600ms ease-out;
         }
 
+        .header-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
         .logo-initials {
-            font-size: 2.4rem;
-            font-weight: 600;
+            font-size: 3.2rem;
+            font-weight: 700;
             color: var(--gold);
             font-family: 'Lora', serif;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             line-height: 1;
             transition: all 300ms ease;
+            font-style: italic;
         }
 
         .logo-initials:hover {
             transform: scale(1.05);
-            text-shadow: 0 0 15px rgba(212,175,55,0.2);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: 700;
             color: var(--white);
             font-family: 'Lora', serif;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             padding-bottom: 0;
-            border-bottom: 2px solid var(--gold);
-            line-height: 1.1;
+            line-height: 1;
             animation: fadeInDown 600ms ease-out 100ms both;
             transition: all 300ms ease;
             position: relative;
@@ -251,6 +263,7 @@
             flex-direction: column-reverse;
             align-items: flex-end;
             gap: 1rem;
+            padding-right: 1rem;
         }
 
         .menu-btn {
@@ -1160,9 +1173,9 @@
         }
 
         .celta-logo {
-            max-width: 180px;
+            max-width: 360px;
             height: auto;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
             animation: fadeIn 600ms ease-out 100ms both;
         }
 
@@ -1182,8 +1195,9 @@
     <header>
         <nav>
             <div class="logo-section">
-                <div class="logo-initials">RM</div>
+                <img src="images/rebecca-profile.png" alt="Rebecca Mars" class="header-profile">
                 <div>
+                    <div class="logo-initials">RM</div>
                     <div class="logo">Rebecca Mars</div>
                     <div class="tagline">Interpreter & Translator</div>
                     <div class="tagline-secondary">Bridging Languages · Connecting People</div>

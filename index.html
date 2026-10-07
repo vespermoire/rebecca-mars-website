@@ -548,7 +548,6 @@
             overflow: hidden;
             transition: all 300ms ease;
             background: var(--white);
-            animation: fadeInUp 600ms ease-out both;
             opacity: 0;
         }
 
@@ -623,7 +622,6 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            animation: fadeInUp 600ms ease-out;
             opacity: 0;
         }
 
@@ -653,15 +651,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            animation: scaleIn 600ms ease-out both;
             opacity: 0;
         }
-
-        /* Stagger animations for price cards */
-        .price-card:nth-child(1) { animation-delay: 0ms; }
-        .price-card:nth-child(2) { animation-delay: 100ms; }
-        .price-card:nth-child(3) { animation-delay: 200ms; }
-        .price-card:nth-child(4) { animation-delay: 300ms; }
         .price-card:nth-child(5) { animation-delay: 400ms; }
         .price-card:nth-child(6) { animation-delay: 500ms; }
 
@@ -924,17 +915,8 @@
         .faq-item {
             margin-bottom: 1.5rem;
             overflow: hidden;
-            animation: fadeInUp 600ms ease-out both;
             opacity: 0;
         }
-
-        /* Stagger FAQ animations */
-        .faq-item:nth-child(1) { animation-delay: 0ms; }
-        .faq-item:nth-child(2) { animation-delay: 100ms; }
-        .faq-item:nth-child(3) { animation-delay: 200ms; }
-        .faq-item:nth-child(4) { animation-delay: 300ms; }
-        .faq-item:nth-child(5) { animation-delay: 400ms; }
-        .faq-item:nth-child(6) { animation-delay: 500ms; }
 
         .faq-question {
             padding: 1.5rem;

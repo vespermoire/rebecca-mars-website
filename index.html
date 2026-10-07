@@ -27,6 +27,118 @@
             line-height: 1.6;
         }
 
+        /* ANIMATION KEYFRAMES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lift {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
         /* HEADER */
         header {
             position: sticky;
@@ -56,6 +168,7 @@
             padding-bottom: 0;
             border-bottom: 3px solid var(--gold);
             line-height: 1;
+            animation: fadeInDown 600ms ease-out;
         }
 
         .tagline {
@@ -64,6 +177,7 @@
             font-weight: 500;
             letter-spacing: 0.05em;
             margin-top: 0.2rem;
+            animation: fadeInDown 600ms ease-out 100ms both;
         }
 
         .nav-right {
@@ -101,6 +215,7 @@
             margin-top: 0.5rem;
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             z-index: 1001;
+            animation: slideDown 300ms ease-out;
         }
 
         .dropdown-menu.active {
@@ -161,6 +276,7 @@
             justify-content: center;
             gap: 0.5rem;
             border-bottom: 3px solid var(--gold);
+            animation: fadeIn 800ms ease-out 200ms both;
         }
 
         .whatsapp-section p {
@@ -235,13 +351,30 @@
             .tagline { font-size: 0.75rem; }
         }
 
-        /* HERO */
+        /* HERO - ENHANCED WITH ANIMATIONS */
         .hero {
             background: var(--white);
             color: var(--navy);
             padding: 3rem 2rem;
             text-align: center;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(212,175,55,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26,58,82,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .hero-inner {
@@ -251,6 +384,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text h1 {
@@ -259,13 +394,28 @@
             font-weight: 600;
             margin-bottom: 1rem;
             line-height: 1.2;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 700ms ease-out;
+            color: var(--navy);
+        }
+
+        .hero-text h1::before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto 1rem;
+            animation: scaleIn 500ms ease-out 200ms both;
         }
 
         .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            line-height: 1.7;
+            line-height: 1.8;
             opacity: 0.95;
+            animation: fadeInUp 700ms ease-out 100ms both;
+            letter-spacing: 0.3px;
         }
 
         .hero-image {
@@ -277,6 +427,21 @@
             overflow: hidden;
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
             margin: 0 auto;
+            animation: fadeInUp 700ms ease-out 200ms both;
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        .hero-image:hover::after {
+            opacity: 0.08;
         }
 
         .hero-image img {
@@ -296,12 +461,28 @@
             font-size: 1rem;
             text-decoration: none;
             cursor: pointer;
-            transition: all 200ms ease;
+            transition: all 300ms ease;
+            animation: fadeInUp 700ms ease-out 200ms both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--navy);
+            transition: left 300ms ease;
+            z-index: -1;
         }
 
         .cta-btn:hover {
-            background: transparent;
             color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212,175,55,0.3);
         }
 
         @media (max-width: 1024px) {
@@ -309,14 +490,7 @@
             .hero-text h1 { font-size: 2.2rem; }
         }
 
-        /* SECTIONS */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2.5rem 2rem;
-            border-bottom: 2px solid var(--gold);
-        }
-
+        /* SECTION HEADER ANIMATION */
         section h2 {
             font-family: 'Lora', serif;
             font-size: 2.2rem;
@@ -324,6 +498,41 @@
             margin-bottom: 2rem;
             text-align: center;
             font-weight: 600;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+        }
+
+        /* Gold divider decoration */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            right: 2rem;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
         /* SERVICES */
@@ -337,14 +546,25 @@
             border: 2px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
-            transition: all 200ms ease;
+            transition: all 300ms ease;
             background: var(--white);
+            animation: fadeInUp 600ms ease-out both;
+            opacity: 0;
         }
+
+        /* Stagger animations for service cards */
+        .service-card:nth-child(1) { animation-delay: 0ms; }
+        .service-card:nth-child(2) { animation-delay: 100ms; }
+        .service-card:nth-child(3) { animation-delay: 200ms; }
+        .service-card:nth-child(4) { animation-delay: 300ms; }
+        .service-card:nth-child(5) { animation-delay: 400ms; }
+        .service-card:nth-child(6) { animation-delay: 500ms; }
 
         .service-card:hover {
             border-color: var(--gold);
-            box-shadow: 0 8px 20px rgba(212,175,55,0.15);
-            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(212,175,55,0.25),
+                        0 0 20px rgba(212,175,55,0.15);
+            transform: translateY(-8px);
         }
 
         .service-image {
@@ -352,12 +572,31 @@
             height: 200px;
             background: var(--light);
             overflow: hidden;
+            position: relative;
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(212,175,55,0.1) 100%);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        .service-card:hover .service-image::after {
+            opacity: 1;
         }
 
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 300ms ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
         }
 
         .service-content {
@@ -384,6 +623,8 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
+            animation: fadeInUp 600ms ease-out;
+            opacity: 0;
         }
 
         .about-content p {
@@ -391,6 +632,7 @@
             font-size: 1rem;
             line-height: 1.8;
             color: #555;
+            letter-spacing: 0.2px;
         }
 
         /* PRICING */
@@ -405,19 +647,30 @@
             border-radius: 8px;
             padding: 0.7rem 1rem;
             text-align: center;
-            transition: all 200ms ease;
+            transition: all 300ms ease;
             background: var(--navy);
             min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            animation: scaleIn 600ms ease-out both;
+            opacity: 0;
         }
+
+        /* Stagger animations for price cards */
+        .price-card:nth-child(1) { animation-delay: 0ms; }
+        .price-card:nth-child(2) { animation-delay: 100ms; }
+        .price-card:nth-child(3) { animation-delay: 200ms; }
+        .price-card:nth-child(4) { animation-delay: 300ms; }
+        .price-card:nth-child(5) { animation-delay: 400ms; }
+        .price-card:nth-child(6) { animation-delay: 500ms; }
 
         .price-card:hover,
         .price-card:active,
         .price-card:focus {
-            box-shadow: 0 8px 24px rgba(212,175,55,0.3);
-            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(212,175,55,0.35),
+                        0 0 25px rgba(212,175,55,0.2);
+            transform: translateY(-8px);
             outline: 2px solid var(--gold);
             outline-offset: -1px;
         }
@@ -455,6 +708,10 @@
             margin: 0 auto;
         }
 
+        .contact-info {
+            animation: fadeInUp 600ms ease-out 100ms both;
+        }
+
         .contact-info h3 {
             font-family: 'Lora', serif;
             font-size: 1.3rem;
@@ -482,11 +739,27 @@
             color: var(--navy);
             text-decoration: none;
             font-weight: 500;
-            transition: color 150ms ease;
+            transition: all 300ms ease;
+            position: relative;
+        }
+
+        .contact-detail a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 300ms ease;
         }
 
         .contact-detail a:hover {
             color: var(--gold);
+        }
+
+        .contact-detail a:hover::after {
+            width: 100%;
         }
 
         .social-icons {
@@ -507,12 +780,14 @@
             color: var(--white);
             font-size: 1.2rem;
             text-decoration: none;
-            transition: all 150ms ease;
+            transition: all 300ms ease;
         }
 
         .social-icon:hover {
             background: var(--gold);
             color: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.3);
         }
 
         /* FORM */
@@ -520,6 +795,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
+            animation: fadeInUp 600ms ease-out both;
         }
 
         .form-group {
@@ -542,7 +818,7 @@
             border-radius: 6px;
             font-family: inherit;
             font-size: 0.95rem;
-            transition: border-color 150ms ease;
+            transition: all 300ms ease;
         }
 
         .form-group input:focus,
@@ -550,7 +826,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
         }
 
         .form-submit {
@@ -562,13 +838,28 @@
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
-            transition: all 200ms ease;
+            transition: all 300ms ease;
             margin-top: 0.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--navy);
+            transition: left 300ms ease;
+            z-index: -1;
         }
 
         .form-submit:hover {
-            background: var(--navy);
             color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212,175,55,0.3);
         }
 
         /* FOOTER */
@@ -602,11 +893,12 @@
             text-decoration: none;
             font-size: 0.9rem;
             margin-bottom: 0.6rem;
-            transition: color 150ms ease;
+            transition: all 300ms ease;
         }
 
         .footer-section a:hover {
             color: var(--gold);
+            transform: translateX(4px);
         }
 
         .footer-bottom {
@@ -632,7 +924,17 @@
         .faq-item {
             margin-bottom: 1.5rem;
             overflow: hidden;
+            animation: fadeInUp 600ms ease-out both;
+            opacity: 0;
         }
+
+        /* Stagger FAQ animations */
+        .faq-item:nth-child(1) { animation-delay: 0ms; }
+        .faq-item:nth-child(2) { animation-delay: 100ms; }
+        .faq-item:nth-child(3) { animation-delay: 200ms; }
+        .faq-item:nth-child(4) { animation-delay: 300ms; }
+        .faq-item:nth-child(5) { animation-delay: 400ms; }
+        .faq-item:nth-child(6) { animation-delay: 500ms; }
 
         .faq-question {
             padding: 1.5rem;
@@ -643,13 +945,14 @@
             align-items: center;
             font-weight: 600;
             color: var(--white);
-            transition: all 150ms ease;
+            transition: all 300ms ease;
             border-radius: 8px;
         }
 
         .faq-question:hover {
             background: #254a6a;
-            box-shadow: 0 4px 12px rgba(212,175,55,0.2);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.25);
+            transform: translateX(8px);
         }
 
         .faq-icon {
@@ -672,17 +975,6 @@
             border-radius: 0 0 8px 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             animation: slideDown 300ms ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .faq-item.open .faq-answer {
@@ -716,25 +1008,48 @@
             font-size: 0.9rem;
             font-weight: 500;
             text-decoration: none;
+            transition: all 300ms ease;
+            animation: fadeInUp 600ms ease-out both;
+        }
+
+        .credential-badge:nth-child(1) { animation-delay: 100ms; }
+        .credential-badge:nth-child(2) { animation-delay: 200ms; }
+        .credential-badge:nth-child(3) { animation-delay: 300ms; }
+        .credential-badge:nth-child(4) { animation-delay: 400ms; }
+
+        .credential-badge:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.3);
         }
 
         .credential-badge i {
             font-size: 1rem;
             color: var(--gold);
+            transition: color 300ms ease;
+        }
+
+        .credential-badge:hover i {
+            color: var(--navy);
         }
 
         .celta-logo {
             max-width: 180px;
             height: auto;
             margin: 1.5rem auto;
+            animation: fadeIn 600ms ease-out 100ms both;
         }
 
         @media (max-width: 768px) {
             section { padding: 2rem 1.5rem; }
+            section::before { left: 1.5rem; right: 1.5rem; }
             section h2 { font-size: 1.8rem; }
             .contact-container { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 1.8rem; }
+            .hero-text h1::before { width: 50px; }
             .credentials-badges { flex-direction: column; }
+            .hero-inner { gap: 1.5rem; padding: 1rem; }
         }
     </style>
 </head>
@@ -959,6 +1274,40 @@
         let currentLanguage = 'en';
         let currentCurrency = 'chf';
 
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = '';
+
+                    // Re-enable animation from CSS
+                    const computedStyle = window.getComputedStyle(entry.target);
+                    const animation = computedStyle.animation;
+
+                    if (entry.target.classList.contains('service-card')) {
+                        const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                        entry.target.style.animation = `fadeInUp 600ms ease-out ${index * 100}ms both`;
+                    } else if (entry.target.classList.contains('price-card')) {
+                        const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                        entry.target.style.animation = `scaleIn 600ms ease-out ${index * 100}ms both`;
+                    } else if (entry.target.classList.contains('faq-item')) {
+                        const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                        entry.target.style.animation = `fadeInUp 600ms ease-out ${index * 100}ms both`;
+                    } else if (entry.target.classList.contains('about-content')) {
+                        entry.target.style.animation = 'fadeInUp 600ms ease-out both';
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
         function toggleDropdown() {
             const menu = document.getElementById('dropdown-menu');
             menu.classList.toggle('active');
@@ -1137,6 +1486,11 @@
                     <div class="faq-answer">${faq.a}</div>
                 </div>
             `).join('');
+
+            // Observe FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                observer.observe(item);
+            });
         }
 
         function toggleFAQ(item) {
@@ -1157,6 +1511,11 @@
                     </div>
                 </div>
             `).join('');
+
+            // Observe service cards
+            document.querySelectorAll('.service-card').forEach(card => {
+                observer.observe(card);
+            });
         }
 
         function renderPricing() {
@@ -1172,6 +1531,11 @@
                     </div>
                 `;
             }).join('');
+
+            // Observe pricing cards
+            document.querySelectorAll('.price-card').forEach(card => {
+                observer.observe(card);
+            });
         }
 
         function handleSubmit(e) {
@@ -1191,6 +1555,12 @@
             document.getElementById('curr-eur').classList.toggle('active', savedCurr === 'eur');
             updateContent();
             renderPricing();
+
+            // Observe about section
+            const aboutContent = document.querySelector('.about-content');
+            if (aboutContent) {
+                observer.observe(aboutContent);
+            }
         });
     </script>
 </body>

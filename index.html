@@ -152,13 +152,16 @@
         }
 
         header::before {
-            content: '🍃';
+            content: '';
             position: absolute;
-            bottom: 1rem;
-            left: 2rem;
-            font-size: 2rem;
-            opacity: 0.3;
-            animation: float 3s ease-in-out infinite;
+            bottom: 0.5rem;
+            left: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q40 20 35 40 Q30 60 50 85 Q70 60 65 40 Q60 20 50 10' fill='none' stroke='%23d4af37' stroke-width='1.5' opacity='0.4'/%3E%3Cpath d='M35 45 Q25 50 20 65' fill='none' stroke='%23d4af37' stroke-width='1' opacity='0.3'/%3E%3Cpath d='M65 45 Q75 50 80 65' fill='none' stroke='%23d4af37' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+            opacity: 0.4;
+            animation: float 4s ease-in-out infinite;
         }
 
         header::after {
@@ -236,10 +239,11 @@
             font-size: 0.75rem;
             color: var(--gold);
             font-weight: 400;
-            letter-spacing: 0.1em;
-            margin-top: 0.4rem;
+            letter-spacing: 0.15em;
+            margin-top: 0.5rem;
             text-transform: uppercase;
             animation: fadeInDown 600ms ease-out 200ms both;
+            font-family: 'Lora', serif;
         }
 
         .nav-right {
@@ -310,7 +314,7 @@
             padding: 0.8rem 1.6rem;
             background: #25D366;
             color: white;
-            border: none;
+            border: 2px solid var(--gold);
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
@@ -798,6 +802,35 @@
         }
 
         /* CONTACT */
+        #contact {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        #contact h2 {
+            color: var(--white);
+        }
+
+        #contact h2::after {
+            background: var(--gold);
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+        }
+
+        .contact-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-detail a {
+            color: var(--white);
+        }
+
+        .contact-detail a:hover {
+            color: var(--gold);
+        }
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -867,16 +900,16 @@
         }
 
         .social-icon {
-            width: 44px;
-            height: 44px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: none;
-            border-radius: 8px;
-            background: var(--navy);
-            color: var(--white);
-            font-size: 1.2rem;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--gold);
+            font-size: 1.3rem;
             text-decoration: none;
             transition: all 300ms ease;
         }
@@ -885,7 +918,7 @@
             background: var(--gold);
             color: var(--navy);
             transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(212,175,55,0.3);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         }
 
         /* FORM */
@@ -905,18 +938,20 @@
         .form-group label {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--navy);
+            color: var(--white);
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             padding: 0.8rem;
-            border: 2px solid var(--border);
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 6px;
             font-family: inherit;
             font-size: 0.95rem;
             transition: all 300ms ease;
+            background: rgba(255,255,255,0.95);
+            color: var(--navy);
         }
 
         .form-group input:focus,

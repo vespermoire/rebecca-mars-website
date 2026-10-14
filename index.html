@@ -665,16 +665,17 @@
             isolation: isolate;
             font-family: 'Bodoni Moda', Didot, 'Times New Roman', serif;
             font-optical-sizing: auto;
-            color: transparent;
-            background: linear-gradient(125deg, var(--gold-deep) 4%, var(--gold-light) 48%, var(--gold) 78%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--gold-light);
         }
 
         .rm-mark .rm-letter {
             display: block;
             line-height: 0.86;
+            background: linear-gradient(125deg, var(--gold-deep) 4%, var(--gold-light) 48%, var(--gold) 78%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
 
         .rm-mark .rm-letter--r {
